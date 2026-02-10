@@ -3,23 +3,31 @@ import { useNavigate, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { ArrowLeft01Icon } from "@hugeicons/core-free-icons";
+import { login } from "@/data/accounts";
 
 const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // UI only — navigate to profile
-    navigate("/home");
+    setError("");
+    const account = login(email, password);
+    if (account) {
+      navigate("/home");
+    } else {
+      setError("Invalid email or password");
+    }
   };
 
   return (
     <div className="flex h-[100dvh] flex-col bg-background px-4 py-8">
       <button onClick={() => navigate("/")} className="mb-8 self-start text-foreground">
-        <ArrowLeft className="h-6 w-6" />
+        <HugeiconsIcon icon={ArrowLeft01Icon} size={24} />
       </button>
 
       <motion.div
@@ -55,6 +63,14 @@ const Login = () => {
           <Link to="#" className="self-end text-sm text-primary">
             Forgot password?
           </Link>
+
+          {error && (
+            <p className="text-sm text-destructive">{error}</p>
+          )}
+
+          <p className="text-xs text-muted-foreground">
+            Demo: player@hoops.id / player123 · coach@hoops.id / coach123
+          </p>
 
           <div className="mt-auto pb-8">
             <Button

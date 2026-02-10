@@ -3,7 +3,8 @@ import { useNavigate, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { ArrowLeft01Icon } from "@hugeicons/core-free-icons";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -19,7 +20,7 @@ const Signup = () => {
   return (
     <div className="flex min-h-[100dvh] flex-col bg-background px-6 py-8">
       <button onClick={() => navigate("/")} className="mb-8 self-start text-foreground">
-        <ArrowLeft className="h-6 w-6" />
+        <HugeiconsIcon icon={ArrowLeft01Icon} size={24} />
       </button>
 
       <motion.div

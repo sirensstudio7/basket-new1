@@ -7,6 +7,8 @@ import Landing from "./pages/Landing";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Home from "./pages/Home";
+import Messages from "./pages/Messages";
+import Notifications from "./pages/Notifications";
 import Profile from "./pages/Profile";
 import Stats from "./pages/Stats";
 import NotFound from "./pages/NotFound";
@@ -25,8 +27,11 @@ const App = () => (
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/home" element={<Home />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/messages" element={<Messages />} />
             <Route path="/stats" element={<Stats />} />
+            <Route path="/notifications" element={<Notifications />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/profile/:playerId" element={<Profile />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>

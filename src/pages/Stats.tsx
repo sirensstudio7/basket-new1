@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft } from "lucide-react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { ArrowLeft01Icon } from "@hugeicons/core-free-icons";
 import BottomNav from "@/components/BottomNav";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, LineChart, Line, Tooltip } from "recharts";
 
@@ -38,7 +39,7 @@ const Stats = () => {
     <div className="relative min-h-[100dvh] bg-background px-6 py-8 pb-24">
       <div className="mb-8 flex items-center gap-4">
         <button onClick={() => navigate("/profile")} className="text-foreground">
-          <ArrowLeft className="h-6 w-6" />
+          <HugeiconsIcon icon={ArrowLeft01Icon} size={24} />
         </button>
         <h1 className="text-4xl text-foreground">STATS</h1>
       </div>

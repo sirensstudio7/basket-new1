@@ -1,10 +1,12 @@
 import { useNavigate, useLocation } from "react-router-dom";
-import { House, ChartBar, User } from "@phosphor-icons/react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { Home04Icon, Message01Icon, Notification01Icon, UserCircleIcon } from "@hugeicons/core-free-icons";
 
 const navItems = [
-  { path: "/home", icon: House, label: "Home" },
-  { path: "/stats", icon: ChartBar, label: "Stats" },
-  { path: "/profile", icon: User, label: "Profile" },
+  { path: "/home", icon: Home04Icon, label: "Home" },
+  { path: "/messages", icon: Message01Icon, label: "Message" },
+  { path: "/notifications", icon: Notification01Icon, label: "Notification" },
+  { path: "/profile", icon: UserCircleIcon, label: "Profile" },
 ];
 
 const BottomNav = () => {
@@ -14,7 +16,7 @@ const BottomNav = () => {
   return (
     <nav className="fixed bottom-0 left-1/2 z-50 w-full max-w-[430px] -translate-x-1/2 border-t border-border bg-background pb-[env(safe-area-inset-bottom)] pt-3">
       <div className="flex items-center justify-around">
-        {navItems.map(({ path, icon: Icon, label }) => {
+        {navItems.map(({ path, icon, label }) => {
           const isActive = location.pathname === path;
           return (
             <button
@@ -22,9 +24,9 @@ const BottomNav = () => {
               onClick={() => navigate(path)}
               className="flex flex-col items-center gap-1"
             >
-              <Icon
-                size={26}
-                weight={isActive ? "fill" : "regular"}
+              <HugeiconsIcon
+                icon={icon}
+                size={24}
                 className={isActive ? "text-primary" : "text-muted-foreground"}
               />
               <span
