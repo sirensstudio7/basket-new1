@@ -62,7 +62,7 @@ const Home = () => {
   const featuredPlayers = players.filter((p) => p.featured);
 
   return (
-    <div className="flex h-[100dvh] min-w-0 flex-col overflow-hidden bg-background p-4">
+    <div className="flex h-[100dvh] min-w-0 flex-col overflow-hidden bg-background p-4 pt-0">
       {/* Header + Stats + Search - grouped */}
       <div className="-mx-4 mb-4 flex shrink-0 flex-col gap-4 bg-black px-4 pb-4 pt-4">
         <Card className="border-0 bg-transparent shadow-none">

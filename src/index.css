@@ -82,4 +82,14 @@
     font-family: 'Bebas Neue', sans-serif;
     letter-spacing: 0.05em;
   }
+
+  /* Hide scrollbars */
+  * {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  *::-webkit-scrollbar {
+    display: none;
+  }
 }
